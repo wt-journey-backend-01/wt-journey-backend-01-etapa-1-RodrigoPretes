@@ -7,6 +7,56 @@
     <script src="server.js"></script>
     <title>Dev Burguer</title>
 </head>
+
+<script>
+  async function carregarLanches() {
+    const resposta = await fetch('/api/lanches');
+    const lanches = await resposta.json();
+    const menuSection = document.querySelector('.menu');
+    menuSection.innerHTML = `<h2>Os Mais Vendidos do Ifood :)</h2>`; // limpa e recria
+
+    lanches.forEach(lanche => {
+      const produto = document.createElement('div');
+      produto.classList.add('produto');
+
+      produto.innerHTML = `
+        <div class="detalhes">
+          <h3>${lanche.nome}</h3>
+          <p>${lanche.descricao}</p>
+          <strong>A partir de ${lanche.preco}</strong>
+        </div>
+        <img src="${lanche.imagem}" alt="${lanche.nome}">
+      `;
+
+      menuSection.appendChild(produto);
+    });
+  }
+
+  async function enviarSugestao(event) {
+    event.preventDefault();
+
+    const form = document.querySelector('#form-sugestao');
+    const formData = new FormData(form);
+
+    const resposta = await fetch('/api/lanches', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (resposta.ok) {
+      await carregarLanches(); 
+      document.querySelector('#form-sugestao').reset(); 
+    } else {
+      alert('Erro ao adicionar lanche');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    carregarLanches();
+    document.querySelector('#form-sugestao').addEventListener('submit', enviarSugestao);
+  });
+</script>
+
 <body>
     <header>
         <a href="" class="box-header">
@@ -29,36 +79,27 @@
 
         <section class="menu">
             <h2>Os Mais Vendidos do Ifood :)</h2>
-
-            <div class="produto">
-                <div class="detalhes">
-                <h3>XBacon</h3>
-                <p>Apresentamos o nosso 'Xbacon', O Burger é estrelado com nosso novo blend artesanal de 100g...</p>
-                <strong>A partir de R$ 30,95</strong>
-                </div>
-                <img src="/images/xbacon.jpeg" alt="Xbacon">
-            </div>
-
-            <div class="produto">
-                <div class="detalhes">
-                <h3>Xsalada c/ Bacon</h3>
-                <p>Pão brioche selado na manteiga, bacon defumado, burger artesanal de 100g...</p>
-                <strong>A partir de R$ 34,95</strong>
-                </div>
-                <img src="/images/xsalada.jpeg" alt="Xsalada">
-            </div>
-
-            
+            <!-- Inserção dinamica do cardapio -->
         </section>
 
         <h1>Sugestão</h1>
 
-        <form action="/sugestao" method="POST" class="formulario">
+        <form id="form-sugestao" class="formulario" enctype="multipart/form-data">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required />
 
-            <label for="pedido">Ingredientes:</label>
-            <textarea id="pedido" name="pedido" rows="4" required></textarea>
+            <label for="descricao">Ingredientes:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+            <label for="preco">Preço:</label>
+            <input type="text" id="preco" name="preco" required />
+
+            <div class="upload-wrapper">
+            <label for="imagem" class="custom-file-upload">
+                Escolher imagem
+            </label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required />
+            </div>
 
             <button type="submit">Enviar Sugestão</button>
         </form>

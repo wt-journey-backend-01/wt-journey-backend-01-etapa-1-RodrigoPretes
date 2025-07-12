@@ -178,9 +178,9 @@ main h1 {
   background: var(--primary-dark);
   padding: 2rem;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 800px;
   width: 100%;
-  margin: 0 auto 3rem;
+  margin: 2rem auto;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
@@ -200,6 +200,8 @@ main h1 {
   font-size: 1.4rem;
   background: var(--gray-100);
   color: var(--gray-900);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 .formulario button {
@@ -232,3 +234,51 @@ footer {
     border-top: 1px solid var(--gray-700);
 }
 
+.upload-wrapper input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  background-color: #0a936b;
+  color: var(--gray-900);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #0a936aa3;
+}
+
+.formulario-contato {
+  background-color: #065f46;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.formulario-contato h1 {
+  margin-bottom: 1rem;
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: #0fb780;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.btn-voltar:hover {
+  background-color: #0a936b;
+}

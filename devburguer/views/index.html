@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="server.js"></script>
+    <title>Dev Burguer</title>
+</head>
+<body>
+    <header>
+        <a href="" class="box-header">
+            <img src="/images/logo.png" alt="">
+            <span>Dev Burguer</span>
+        </a>
+        <nav class=menu-header>
+            <a class=menuLink href="#" class="active">
+                Home
+            </a>
+            <a class=menuLink href="#">
+                Sugestão
+            </a>
+            <a class=menuLink href="contato.html">
+                Contato
+            </a>
+        </nav>
+    </header>
+    <main>
+
+        <section class="menu">
+            <h2>Os Mais Vendidos do Ifood :)</h2>
+
+            <div class="produto">
+                <div class="detalhes">
+                <h3>XBacon</h3>
+                <p>Apresentamos o nosso 'Xbacon', O Burger é estrelado com nosso novo blend artesanal de 100g...</p>
+                <strong>A partir de R$ 30,95</strong>
+                </div>
+                <img src="/images/xbacon.jpeg" alt="Xbacon">
+            </div>
+
+            <div class="produto">
+                <div class="detalhes">
+                <h3>Xsalada c/ Bacon</h3>
+                <p>Pão brioche selado na manteiga, bacon defumado, burger artesanal de 100g...</p>
+                <strong>A partir de R$ 34,95</strong>
+                </div>
+                <img src="/images/xsalada.jpeg" alt="Xsalada">
+            </div>
+
+            
+        </section>
+
+        <h1>Sugestão</h1>
+
+        <form action="/sugestao" method="POST" class="formulario">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="pedido">Ingredientes:</label>
+            <textarea id="pedido" name="pedido" rows="4" required></textarea>
+
+            <button type="submit">Enviar Sugestão</button>
+        </form>
+    </main>
+    <footer>
+        All Rights Reserved
+    </footer>
+</body>
+</html>

@@ -1,49 +1,37 @@
 <sup>Esse é um feedback gerado por IA, ele pode conter erros.</sup>
 
-Você tem 9 créditos restantes para usar o sistema de feedback AI.
+Você tem 8 créditos restantes para usar o sistema de feedback AI.
 
 # Feedback para RodrigoPretes:
 
-Nota final: **17.1/100**
+Nota final: **67.7/100**
 
-# Feedback para RodrigoPretes 🚀
+Olá, RodrigoPretes! 🚀 Espero que você esteja bem! Antes de tudo, quero parabenizá-lo pelo seu esforço e conquistas neste desafio. Você fez um ótimo trabalho, e é importante reconhecer as vitórias! 🎉
 
-Olá, Rodrigo! Primeiro, quero parabenizá-lo por todo o esforço que você dedicou a este projeto. Criar um servidor Express.js não é uma tarefa fácil, e você está no caminho certo! 🎉 Vamos juntos analisar o que funcionou e o que podemos melhorar para que você brilhe ainda mais na próxima vez!
+### Conquistas Bônus
+Primeiro, vamos celebrar alguns pontos que você mandou muito bem:
+- Você utilizou o padrão PRG (Post/Redirect/Get) na rota `/contato` corretamente. Isso é essencial para manter a statelessness do servidor! 👏
+- Também vi que você aplicou corretamente as tags `<label>` e o atributo `id` nos inputs 'nome' e 'ingredientes' na rota `/sugestao`. Isso demonstra uma boa atenção aos detalhes e acessibilidade! 👍
 
-## Conquistas Bônus 🎉
+### Analisando os Requisitos que Precisam de Atenção
+Agora, vamos olhar para os pontos que precisam de um pouquinho mais de atenção. Lembre-se, o objetivo aqui é aprender e crescer! 💡
 
-Infelizmente, não encontramos conquistas bônus nesta entrega, mas isso não significa que você não está progredindo! Cada linha de código que você escreve é uma oportunidade de aprender e se desenvolver. Lembre-se de que cada desafio é um passo em direção ao seu crescimento como desenvolvedor. Continue assim!
+1. **Rota `/sugestao`:** 
+   - Você precisa exibir o nome e os ingredientes enviados via query string na página HTML. No seu código, percebi que a rota `/sugestao` está definida, mas você não está processando os dados da query string. Para corrigir isso, você pode acessar `req.query` e usar essas informações na sua resposta HTML.
 
-## Análise de Requisitos que Precisam de Atenção 🔍
+2. **Rota `/contato` (GET):** 
+   - Um dos pontos falhos foi a falta de um campo `<input>` ou `<textarea>` do tipo texto com o atributo `name` como "assunto". Ao examinar sua implementação, não encontrei esse campo no HTML da página de contato. Certifique-se de que esse campo esteja presente para coletar as informações necessárias!
 
-Vamos analisar as falhas que foram identificadas e descobrir a raiz de cada uma:
+3. **Rota `/contato` (POST):** 
+   - Você precisa exibir o "nome", "email", "assunto" e "mensagem" enviados no formulário na página de resposta. Embora você redirecione para a página `/contato-recebido`, é importante garantir que esses dados sejam passados corretamente e exibidos lá. No seu código, você faz isso corretamente com query strings, mas é sempre bom verificar se a página HTML realmente exibe essas informações.
 
-1. **Rota `/`: campos de input faltando**  
-   Percebi que o requisito pede dois campos de input (`nome` e `ingredientes`). No entanto, ao investigar, notei que você não incluiu o HTML que renderiza esses campos. Isso provavelmente está na sua página `index.html`. Você deve verificar se esses inputs estão realmente presentes lá!
+4. **Rota `/api/lanches`:** 
+   - Aqui, cada objeto do array deve ter os atributos `id`, `nome` e `ingredientes`. Ao analisar o seu código, percebi que você não está garantindo que esses atributos sejam preenchidos corretamente antes de enviar a resposta. Além disso, é importante verificar se esses valores não estão vazios, 0 ou `null`.
 
-2. **Rota `/sugestao` não implementada**  
-   Todos os requisitos relacionados à rota `/sugestao` falharam porque esta rota simplesmente não existe no seu código. Para atender a esses requisitos, você precisa implementar essa rota com um `app.get('/sugestao', ...)` ou `app.post('/sugestao', ...)`, dependendo da lógica que deseja aplicar.
+### Problemas que Geraram Descontos
+Uma questão que você deve observar é a presença de outras dependências além do `express` no seu projeto. Isso pode causar confusão e complicar a estrutura do seu código. Certifique-se de que todas as dependências sejam realmente necessárias para o funcionamento do seu servidor.
 
-3. **Rota `/contato` (GET) com falhas**  
-   A rota `/contato` não está implementada como um `app.get(...)`. Isso significa que você não está retornando a página que deve conter os campos de input necessários (como `nome`, `email`, `assunto` e `mensagem`). Este é o primeiro passo para corrigir vários requisitos que falharam aqui. Vamos criar essa rota juntos? 😉
+### Considerações Finais
+Rodrigo, você está no caminho certo! Cada desafio traz oportunidades para aprender e melhorar. Não se desanime com os pontos que precisam de ajuste; eles são apenas passos para o seu crescimento como desenvolvedor! Continue praticando, revisando seu código e buscando soluções. Você tem um grande potencial! 💪
 
-4. **Rota `/api/lanches`**  
-   A rota para `/api/lanches` parece estar implementada corretamente para leitura (GET), mas o requisito menciona que não deve aceitar POST. Isso pode ser um problema de entendimento dos requisitos, então vale a pena revisar o que o desafio pedia!
-
-## Problemas que Geraram Descontos ⚠️
-
-Agora, vamos abordar os problemas que geraram descontos em sua nota:
-
-1. **Endpoint `/api/lanches` não deve aceitar método POST**  
-   Como mencionei, a sua rota `/api/lanches` tem um método POST implementado, mas o requisito indica que apenas o método GET deveria ser aceito. É importante revisar as instruções do desafio e garantir que seu código esteja alinhado com o que foi pedido.
-
-2. **Static files: projeto contém outras dependências além do express**  
-   Você está utilizando o `multer` e o `fs`, que são ótimas ferramentas, mas o requisito do desafio pode ter pedido para manter o projeto o mais simples possível. Avalie se é realmente necessário usar essas dependências ou se você consegue resolver a situação usando apenas o Express.
-
-## Conclusão 🌟
-
-Rodrigo, você está fazendo um ótimo trabalho ao implementar um servidor Express! É normal encontrar desafios e erros ao longo do caminho – isso faz parte do processo de aprendizado. Estou aqui para ajudar você a resolver cada um deles. 
-
-Reveja as rotas que discutimos, implemente o que falta e não hesite em voltar aqui para esclarecer dúvidas. Continue assim, você está mais perto de se tornar um desenvolvedor incrível! 🚀💡
-
-Vamos juntos para a próxima!
+Se você precisar de mais ajuda com qualquer um desses pontos ou quiser discutir alguma parte do seu código, estou aqui para ajudar! Vamos juntos nessa jornada de aprendizado! 🌟

@@ -22,9 +22,7 @@
 
   <main class="formulario-container">
     <h1 id="agradecimento">Obrigado!</h1>
-    <p><strong>Email:</strong> <span id="email"></span></p>
-    <p><strong>Assunto:</strong> <span id="assunto"></span></p>
-    <p><strong>Mensagem:</strong> <span id="mensagem"></span></p>
+    <p><strong>Assunto: Sugestão de burguer!</strong> <span id="assunto"></span></p>
   </main>
 
   <footer>
@@ -39,14 +37,8 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       const nome = getQueryParam('nome');
-      const email = getQueryParam('email');
-      const assunto = getQueryParam('assunto');
-      const mensagem = getQueryParam('mensagem');
 
       document.getElementById('agradecimento').textContent = `Obrigado, ${nome}!`;
-      document.getElementById('email').textContent = email;
-      document.getElementById('assunto').textContent = assunto;
-      document.getElementById('mensagem').textContent = mensagem;
     });
   </script>
 </body>

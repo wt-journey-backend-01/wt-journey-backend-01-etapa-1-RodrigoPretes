@@ -31,30 +31,7 @@
       menuSection.appendChild(produto);
     });
   }
-
-  async function enviarSugestao(event) {
-    event.preventDefault();
-
-    const form = document.querySelector('#form-sugestao');
-    const formData = new FormData(form);
-
-    const resposta = await fetch('/api/lanches', {
-      method: 'POST',
-      body: formData
-    });
-
-    if (resposta.ok) {
-      await carregarLanches(); 
-      document.querySelector('#form-sugestao').reset(); 
-    } else {
-      alert('Erro ao adicionar lanche');
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', () => {
-    carregarLanches();
-    document.querySelector('#form-sugestao').addEventListener('submit', enviarSugestao);
-  });
+  window.addEventListener('DOMContentLoaded', carregarLanches);
 </script>
 
 <body>
@@ -70,7 +47,7 @@
             <a class=menuLink href="#">
                 Sugestão
             </a>
-            <a class=menuLink href="contato.html">
+            <a class=menuLink href="contato">
                 Contato
             </a>
         </nav>
@@ -84,24 +61,14 @@
 
         <h1>Sugestão</h1>
 
-        <form id="form-sugestao" class="formulario" enctype="multipart/form-data">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required />
+        <form id="form-sugestao" class="formulario" method="GET" action="/sugestao">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
 
-            <label for="descricao">Ingredientes:</label>
-            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+          <label for="ingredientes">Ingredientes:</label>
+          <textarea id="ingredientes" name="ingredientes" required></textarea>
 
-            <label for="preco">Preço:</label>
-            <input type="text" id="preco" name="preco" required />
-
-            <div class="upload-wrapper">
-            <label for="imagem" class="custom-file-upload">
-                Escolher imagem
-            </label>
-            <input type="file" id="imagem" name="imagem" accept="image/*" required />
-            </div>
-
-            <button type="submit">Enviar Sugestão</button>
+          <button type="submit">Enviar Sugestão</button>
         </form>
     </main>
     <footer>

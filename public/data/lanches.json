@@ -2,21 +2,21 @@
   {
     "id": 1,
     "nome": "Xbacon",
-    "descricao": "Pão brioche selado na manteiga, bacon delicioso, fatia de queijo cheddar e finalizado com um toque de cheddar cremoso, acompanha nossa maionese da casa de sabor incomparável.",
+    "ingredientes": "Pão brioche selado na manteiga, bacon delicioso, fatia de queijo cheddar e finalizado com um toque de cheddar cremoso, acompanha nossa maionese da casa de sabor incomparável.",
     "preco": "R$ 30,95",
     "imagem": "/images/xbacon.jpeg"
   },
   {
     "id": 2,
     "nome": "Xsalada c/ Bacon",
-    "descricao": "Pão brioche selado na manteiga, fatias de bacon levemente defumadas, Burger artesanal de 100g (100% carne bovina), queijo cheddar, cheddar cremoso delicioso, alface americana, cebola roxa, tomate e finalizado com nossa maionese da casa irrésistivel",
+    "ingredientes": "Pão brioche selado na manteiga, fatias de bacon levemente defumadas, Burger artesanal de 100g (100% carne bovina), queijo cheddar, cheddar cremoso delicioso, alface americana, cebola roxa, tomate e finalizado com nossa maionese da casa irrésistivel",
     "preco": "R$ 34,95",
     "imagem": "/images/xsalada.jpeg"
   },
   {
     "novoId": 3,
     "nome": "Duo Bacon - O Campeão de Vendas",
-    "descricao": "Pão brioche selado na manteiga, dois generosos Búrgueres artesanais de 100gr, cada um feito com 100% de carne bovina, adicionamos uma dupla camada de queijo cheddar e cheddar cremoso, o bacon levemente defumado, traz um toque de sabor, a maionese da casa adiciona um toque cremoso final.",
+    "ingredientes": "Pão brioche selado na manteiga, dois generosos Búrgueres artesanais de 100gr, cada um feito com 100% de carne bovina, adicionamos uma dupla camada de queijo cheddar e cheddar cremoso, o bacon levemente defumado, traz um toque de sabor, a maionese da casa adiciona um toque cremoso final.",
     "preco": "R$ 39,95",
     "imagem": "/images/1752329129677-DuoBacon.jpeg"
   }

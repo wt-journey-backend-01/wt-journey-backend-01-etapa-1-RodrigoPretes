@@ -23,23 +23,28 @@
   <main class="formulario-container">
     <h1 id="agradecimento">Obrigado!</h1>
     <p><strong>Assunto: Sugestão de burguer!</strong> <span id="assunto"></span></p>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Ingredientes:</strong> <span id="ingredientes"></span></p>
   </main>
 
   <footer>
     All Rights Reserved
   </footer>
 
-  <script>
+    <script>
     function getQueryParam(param) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(param) || '';
+        const params = new URLSearchParams(window.location.search);
+        return params.get(param) || '';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      const nome = getQueryParam('nome');
+        const nome = getQueryParam('nome');
+        const ingredientes = getQueryParam('ingredientes');
 
-      document.getElementById('agradecimento').textContent = `Obrigado, ${nome}!`;
+        document.getElementById('nome').textContent = nome;
+        document.getElementById('ingredientes').textContent = ingredientes;
     });
-  </script>
+    </script>
+
 </body>
 </html>

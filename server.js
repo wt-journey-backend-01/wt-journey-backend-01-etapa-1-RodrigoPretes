@@ -22,7 +22,11 @@ app.get('/api/lanches', (req, res) => {
     if (err) {
       return res.status(500).json({erro: `Erro ao ler arquivo \n ${err}`});
     }
-    res.json(JSON.parse(data));
+
+    let lanches = JSON.parse(data);
+    lanches = lanches.filter(l => l.id && l.nome);
+
+    res.json(lanches);
   })
 })
 
